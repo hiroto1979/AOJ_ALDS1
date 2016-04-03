@@ -1,5 +1,3 @@
-import math
-
 def insertion_sort(A, n, g):
     cnt = 0
     for i in range(g, n):
