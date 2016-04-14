@@ -12,7 +12,7 @@ def solve():
             continue
         cur = i
         S = 0
-        m = max(A) + 1
+        m = 10000  # 10**4
         an = 0
         while True:
             V[cur] = True
@@ -21,7 +21,8 @@ def solve():
             m = min(m, v)
             S += v
             cur = T[v]
-            if V[cur]: break
+            if V[cur]:
+                break
         ans += min(S + (an - 2) * m, m + S + (an + 1) * s)
     return ans
 
@@ -30,6 +31,7 @@ if __name__ == '__main__':
     n = int(input())
     A = [int(i) for i in input().split()]
     s = min(A)
+    s = min(s, 10000)
     T = [0] * (max(A)+1)
     ans = solve()
     print(ans)
